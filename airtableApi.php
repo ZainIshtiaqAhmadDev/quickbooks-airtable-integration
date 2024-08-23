@@ -27,7 +27,7 @@ class AirtableAPI {
                     "Authorization: Bearer {$this->apiKey}",
                     "Content-Type: application/json"
                 ],
-                CURLOPT_CAINFO => 'C:/Program Files/php-8.3.10/cacert.pem',
+                CURLOPT_CAINFO => 'assets/cacert.pem',
             ]);
 
             $response = curl_exec($ch);
@@ -73,7 +73,7 @@ class AirtableAPI {
                 "Content-Type: application/json"
             ],
             CURLOPT_POSTFIELDS => json_encode(['fields' => $updatedFields]),
-            CURLOPT_CAINFO => 'C:/Program Files/php-8.3.10/cacert.pem',
+            CURLOPT_CAINFO => 'assets/cacert.pem',
         ]);
 
         $response = curl_exec($ch);
