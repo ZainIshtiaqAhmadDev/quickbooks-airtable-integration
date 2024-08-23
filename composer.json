@@ -1,0 +1,18 @@
+
+{
+  "name": "prodjex/quickbooks-airtable-integration",
+  "description": "An app to integrate QuickBooks Online with Airtable using OAuth2.0",
+  "type": "project",
+  "keywords": ["api", "http", "rest", "quickbooks", "airtable", "integration"],
+  "require": {
+    "quickbooks/v3-php-sdk": ">=5.3.9",
+    "sleiman/airtable-php": "^3.0"
+  },
+  "authors": [
+    {
+      "name": "Zain Ishtiaq",
+      "email": "zainishtiaqahmad@prodjex.com"
+    }
+  ]
+}
+
