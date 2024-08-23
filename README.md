@@ -77,5 +77,5 @@ $ ngrok http 3000
 * You will be redirected to the Intuit authorization page. After authorization, you will be redirected back to home page with token details printed.
 * Click the "Login (OAuth2.0)" button to authorize the app and click on sync estimates button to fetch estimates from quickbooks and update in airtable.
 
-![APP screenshots](assets\app.png)
+![APP screenshots](assets/app.png)
 
