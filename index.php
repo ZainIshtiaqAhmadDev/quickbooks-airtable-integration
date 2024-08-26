@@ -6,7 +6,7 @@ use QuickBooksOnline\API\DataService\DataService;
 $config = include('config.php');
 
 session_start();
-
+// resetSession();
 
 
 $dataService = DataService::Configure(array(
@@ -17,7 +17,8 @@ $dataService = DataService::Configure(array(
     'scope' => $config['oauth_scope'],
     'baseUrl' => $config['base_url'] 
 ));
-
+error_log(print_r($config['base_url'], TRUE)); 
+error_log(print_r($config['oauth_redirect_uri'], TRUE)); 
 $OAuth2LoginHelper = $dataService->getOAuth2LoginHelper();
 $authUrl = $OAuth2LoginHelper->getAuthorizationCodeURL();
 

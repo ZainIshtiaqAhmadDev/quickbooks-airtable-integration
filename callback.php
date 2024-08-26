@@ -6,7 +6,7 @@ session_start();
 
 function processCode()
 {
-
+    error_log(print_r($config['base_url'], TRUE)); 
     // Create SDK instance
     $config = include('config.php');
     $dataService = DataService::Configure(array(
@@ -15,11 +15,12 @@ function processCode()
         'ClientSecret' =>  $config['client_secret'],
         'RedirectURI' => $config['oauth_redirect_uri'],
         'scope' => $config['oauth_scope'],
-        'baseUrl' => "development"
+        'baseUrl' => $config['base_url'] 
     ));
-
+   
     $OAuth2LoginHelper = $dataService->getOAuth2LoginHelper();
     $parseUrl = parseAuthRedirectUrl(htmlspecialchars_decode($_SERVER['QUERY_STRING']));
+   
     /*
      * Update the OAuth2Token
      */
