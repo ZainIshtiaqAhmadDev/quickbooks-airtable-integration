@@ -6,9 +6,10 @@ session_start();
 
 function processCode()
 {
-    error_log(print_r($config['base_url'], TRUE)); 
+   
     // Create SDK instance
     $config = include('config.php');
+    error_log(print_r($config['base_url'], TRUE)); 
     $dataService = DataService::Configure(array(
         'auth_mode' => 'oauth2',
         'ClientID' => $config['client_id'],

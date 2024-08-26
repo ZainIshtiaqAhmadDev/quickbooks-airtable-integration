@@ -17,8 +17,6 @@ $dataService = DataService::Configure(array(
     'scope' => $config['oauth_scope'],
     'baseUrl' => $config['base_url'] 
 ));
-error_log(print_r($config['base_url'], TRUE)); 
-error_log(print_r($config['oauth_redirect_uri'], TRUE)); 
 $OAuth2LoginHelper = $dataService->getOAuth2LoginHelper();
 $authUrl = $OAuth2LoginHelper->getAuthorizationCodeURL();
 
@@ -154,7 +152,16 @@ if (isset($_POST['reset_session'])) {
 
     <div class="well text-center">
 
-        <h1>QuickBooks API & Airtable Integration</h1>
+        <h1>
+            QuickBooks API & Airtable Integration 
+            <?php 
+                if ($config['base_url'] == 'production') {
+                    echo "(Production)";
+                } elseif ($config['base_url'] == 'development') {
+                    echo "(Development)";
+                }
+            ?>
+        </h1>
         <h2>OAuth2 Authentication, API Requests, and Airtable Synchronization</h2>
 
         <br>
